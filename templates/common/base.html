@@ -34,28 +34,25 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="{{ home_page }}">
+                    <li class="{{ home_active }}">
                         <a href="{% url 'home_link' %}">Home</a>
                     </li>
-                    <li class="{{ about_page }}">
+                    <li class="{{ about_active }}">
                         <a href="{% url 'about_link' %}">About</a>
                     </li>
 
-                    <li class="{{ contact_page }}">
+                    <li class="{{ contact_active }}">
                         <a href="{% url 'contact_link' %}">Contact</a>
                     </li>
                     <li class="dropdown">
                         <a href="portfolio-1-col.html" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="{{ supermario_page }}">
-                                <a href="super-mario.html">Super Mario</a>
+                            <li class="{{ supermario_active }}">
+                                <a href="{% url 'supermario_link' %}">Super Mario</a>
                             </li>
-                            <li class="{{ doctorhyde_page }}">
-                                <a href="doctorhyde.html">DoctorHyde</a>
-                            </li>
-                            <li class="{{ topfreegames_page }}">
-                                <a href="topfreegames.html">TopFreeGames</a>
+                            <li class="{{ doctorhyde_active }}">
+                                <a href="{% url 'doctorhyde_link' %}">DoctorHyde</a>
                             </li>
                         </ul>
                     </li>

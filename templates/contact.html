@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 {% load static %}
 
 {% block title %}
@@ -19,7 +19,7 @@
             <small></small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="home/">Home</a>
+            <li><a href="{% url 'home_link' %}">Home</a>
             </li>
             <li class="active">{{ title }}</li>
         </ol>
