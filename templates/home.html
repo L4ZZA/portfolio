@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+| {{ title }}
+{% endblock %}
+
+{% block page_only_style %}
+<style>
+    #a{
+        background-image: url("{% static '/images/hands-1280.jpg' %}");;
+    }
+    #b{
+        background-image: url("{% static '/images/topfreegames-1280.jpg' %}");;
+    }
+    #c{
+        background-image: url("{% static '/images/gamer-1280.jpg' %}");;
+    }
+</style>
+{% endblock %}
+
+{% block carousel %}
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+        <div class="item active">
+            <div class="fill" id="a"></div>
+        </div>
+        <div class="item">
+            <div class="fill" id="b"></div>
+            <div class="carousel-caption">
+                <h2>Coming Soon!</h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" id="c"></div>
+            <div class="carousel-caption">
+                <h2>Coming Soon!</h2>
+            </div>
+        </div>
+        <span class="carousel-caption" id="title">
+            <h1>Pietro Lazzarotto</h1><br>
+            <p>game developper/ web developper</p>
+        </span>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+
+</header>
+{% endblock %}
+
+{% block content %}
+
+<!-- Marketing Icons Section -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Hi there!
+        </h1>
+    </div>
+    <div class="col-md-8">
+        <p>
+            I'm currently studing Computer Science with Game Technology at <a href="http://www.city.ac.uk/">City London
+                University</a>.
+            <br> Coming from an IT diploma obtained in Italy, I decided to build my future for a career in the
+            videogames industry here in London.
+            <br> Now I'm expanding my knowlegde as much as possible, while looking for a job as a programmer and
+            developing personal projects.
+        </p>
+    </div>
+</div>
+<!-- /.row -->
+
+<!-- Portfolio Projects -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">My projects</h2>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <a href="super-mario.html">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/topfreegames-1280.jpg' %}"
+                alt="">
+            <div class="desc">
+                <div class="desc-content">
+                    <u>Super Mario</u>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <a href="comingsoon.html">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/gamer-1280.jpg' %}" alt="">
+            <div class="desc">
+                <div class="desc-content">
+                    <u>Coming Soon!
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<!-- /.row -->
+
+
+<!-- Coming soon -->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Coming Soon!</h2>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <a href="topfreegames.html">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/topfreegames-1280.jpg' %}"
+                alt="">
+            <div class="desc">
+                <div class="desc-content">
+                    <u>Coming Soon!
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6">
+        <a href="comingsoon.html">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/gamer-1280.jpg' %}" alt="">
+            <div class="desc">
+                <div class="desc-content">
+                    <u>Coming Soon!
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock %}

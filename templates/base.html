@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pietro Lazzarotto {% block title %} {% endblock %} </title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}" type="text/css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}" type="text/css">
+    {% block page_only_style %}
+    
+    {% endblock %}
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home_link' %}">PIETRO LAZZAROTTO</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{{ home_page }}">
+                        <a href="{% url 'home_link' %}">Home</a>
+                    </li>
+                    <li class="{{ about_page }}">
+                        <a href="{% url 'about_link' %}">About</a>
+                    </li>
+
+                    <li class="{{ contact_page }}">
+                        <a href="{% url 'contact_link' %}">Contact</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="portfolio-1-col.html" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="{{ supermario_page }}">
+                                <a href="super-mario.html">Super Mario</a>
+                            </li>
+                            <li class="{{ doctorhyde_page }}">
+                                <a href="doctorhyde.html">DoctorHyde</a>
+                            </li>
+                            <li class="{{ topfreegames_page }}">
+                                <a href="topfreegames.html">TopFreeGames</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    {% block carousel %}
+    
+    {% endblock %}
+
+    <!-- Page Content -->
+    <div class="container">
+        {% block content %}
+
+        {% endblock %}
+        
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; L4ZZA 2020</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
