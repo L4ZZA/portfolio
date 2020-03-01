@@ -26,7 +26,8 @@ SECRET_KEY = 'nf-2p0k$4*jo!$8)ts@o7=n#4fyegpgb5=22dvi6c2t0k-dxm='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'l4zza.pythonanywhere.com'
+    '127.0.0.1',
+    'l4zza.pythonanywhere.com',
 ]
 
 
@@ -127,7 +128,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/images/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'static_resources')
 ]
