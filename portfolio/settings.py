@@ -26,7 +26,7 @@ SECRET_KEY = 'nf-2p0k$4*jo!$8)ts@o7=n#4fyegpgb5=22dvi6c2t0k-dxm='
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'l4zza.pythonanywhere.com/'
+    'l4zza.pythonanywhere.com'
 ]
 
 
