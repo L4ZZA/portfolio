@@ -2,6 +2,7 @@
 **/__pycache__/
 .vscode/
 myvenv/
+static/
 
 #Files
 *.sqlite3
