@@ -25,6 +25,11 @@
     target: '#sideNav'
   });
 
+  // -- example from bootstrap.com
+  // $('#myModal').on('shown.bs.modal', function () {
+  // $('#myInput').trigger('focus')
+  // })
+
   // $('#portfolioModal1').on('shown.bs.modal', function () {
   //   $(".modal-open").removeAttr("style");
   //   $(".modal-open").addClass("fixModal");
