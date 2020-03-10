@@ -67,13 +67,6 @@ def about(request):
     }
     return render(request, 'about.html', context)
 
-def contact(request):
-    context = {
-        "contact_active": "active",
-        "title": "Contact",
-    }
-    return render(request, 'contact.html', context)
-
 def supermario(request):
     context = {
         "supermario_active": "active",

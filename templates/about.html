@@ -5,12 +5,6 @@
 | {{ title }}
 {% endblock %}
 
-{% block page_only_style %}
-{% endblock %}
-
-{% block carousel %}
-{% endblock %}
-
 {% block content %}
 <!-- Page Heading/Breadcrumbs -->
 <div class="row">
@@ -30,14 +24,25 @@
 <!-- Intro Content -->
 <div class="row">
     <div class="col-md-6">
-        <img class="img-responsive" src="{% static 'images/me.jpg' %}" alt=" Working on Arduino" title="Working on Arduino">
+        <img class="img-responsive" src="{% static 'images/me.jpg' %}" alt=" Working on Arduino"
+            title="Working on Arduino">
     </div>
     <div class="col-md-6">
-        <h2>{{ title }} Me</h2>
-        <p>I'm a Computer Science with Game Technology student, looking for a role as a junior web/software developer with the purpose to help your company improve and to gain experience while doing what I like to do: programming.
-            During the past years, I developed several different skills, including Java OOP, C#, C++, PHP, a bit of Python 3,  Angular 1 and 2, Ember.js, Mongo.db, and so on.
+        <h2>About Me</h2>
             <br><br>
-            I'm looking for a year-long placement that would give me the great opportunity of working on real-life projects along with learning new languages and gaining experience.  (Click this link for more information {{ title }} me: <a href="https://uk.linkedin.com/in/pietro-lazzarotto-0737a611b">LinkedIn</a>)</p>
+        <ul class="list-unstyled list-inline list-social-icons">
+            <li>
+                <a href="https://www.linkedin.com/in/pietro-lazzarotto/" target="_blank"><i
+                        class="fa fa-linkedin-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="https://twitter.com/LazzaLazz" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/u/0/103908236624968000267" target="_blank"><i
+                        class="fa fa-google-plus-square fa-2x"></i></a>
+            </li>
+        </ul>
     </div>
 </div>
 <!-- /.row -->
