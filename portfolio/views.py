@@ -15,7 +15,7 @@ projects = [
         'media':[
             {
                 'url':'https://www.youtube.com/embed/amrid966XhQ',
-                'alt':'',
+                'aspectRatio':'4by3',
                 'isVideo': True,
             },
             {
@@ -38,19 +38,14 @@ projects = [
         'media_height': 346.719,
         'media':[
             {
+                'url':'images/doctorhyde_title.png',
+                'alt':'doctorhyde_title not found',
+                'isVideo': False,
+            },
+            {
                 'url':'https://www.youtube.com/embed/uc-cjUKcY0Y',
-                'alt':'',
+                'aspectRatio':'16by9',
                 'isVideo': True,
-            },
-            {
-                'url':'images/java8-1280.jpg',
-                'alt':'java8 not found',
-                'isVideo': False,
-            },
-            {
-                'url':'images/jbox2d-1280.jpg',
-                'alt':'jbox2d not found',
-                'isVideo': False,
             },
         ]
     },
