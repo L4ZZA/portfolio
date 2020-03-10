@@ -1,5 +1,62 @@
 from django.shortcuts import render
 
+projectss = {
+    'mario':{
+
+    }
+}
+projects = [
+    {
+        'title':'Super Marioish',
+        'type':'University',
+        'description':'',
+        'media_width': 575, 
+        'media_height': 455,
+        'media':[
+            {
+                'url':'https://www.youtube.com/embed/amrid966XhQ',
+                'alt':'',
+                'isVideo': True,
+            },
+            {
+                'url':'images/java8-1280.jpg',
+                'alt':'java8 not found',
+                'isVideo': False,
+            },
+            {
+                'url':'images/jbox2d-1280.jpg',
+                'alt':'jbox2d not found',
+                'isVideo': False,
+            },
+        ]
+    },
+    {
+        'title':'Doctor Hyde',
+        'type':'Personal',
+        'description':'University',
+        'media_width': 616.656,
+        'media_height': 346.719,
+        'media':[
+            {
+                'url':'https://www.youtube.com/embed/uc-cjUKcY0Y',
+                'alt':'',
+                'isVideo': True,
+            },
+            {
+                'url':'images/java8-1280.jpg',
+                'alt':'java8 not found',
+                'isVideo': False,
+            },
+            {
+                'url':'images/jbox2d-1280.jpg',
+                'alt':'jbox2d not found',
+                'isVideo': False,
+            },
+        ]
+    },
+]
+
+
 # Create your views here.
 def home(request):
     context = {
@@ -25,13 +82,15 @@ def contact(request):
 def supermario(request):
     context = {
         "supermario_active": "active",
-        "title": "Super Mario",
+        "project": projects[0],
     }
     return render(request, 'supermario.html', context)
 
 def doctorhyde(request):
     context = {
-        "supermario_active": "active",
-        "title": "Super Mario",
+        "doctorhyde_active": "active",
+        "project": projects[1],
     }
     return render(request, 'doctorhyde.html', context)
+
+

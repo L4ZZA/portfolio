@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-| {{ title }}
+| {{ project.title }}
 {% endblock %}
 
 {% block page_only_style %}
@@ -12,112 +12,81 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    .test{
+        margin: 0;
+        position: absolute !important;
+        top: 50% !important;
+        -ms-transform: translateY(-50%) !important;
+        transform: translateY(-50%) !important;
+    }
+</style>
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">{{ project.title }}
+            <small>{{project.type}} Project</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="{% url 'home_link' %}">Home</a>
+            </li>
+            <li class="active">{{ project.title }}</li>
+        </ol>
+    </div>
+</div>
+<!-- /.row -->
 
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Super Mario
-                    <small>University Project</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li class="active">Super Mario</li>
-                </ol>
-            </div>
-        </div>
-        <!-- /.row -->
+<!-- Portfolio Item Row -->
+<div class="row">
+    <div class="col-md-8">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                {% block carousel_dots %}
+                    {% for med in project.media %}
+                        <li data-target="#carousel-example-generic" data-slide-to="{{forloop.counter0}}" class='{{ forloop.first|yesno:"active," }}'></li>
+                    {% endfor %}
+                {% endblock %}
+            </ol>
 
-        <!-- Portfolio Item Row -->
-        <div class="row">
-
-            <div class="col-md-8">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                {% for img in project.media %}
+                    {% if forloop.first %}
                         <div class="item active">
-                            <div align="center">
-                                <div id="whateverID">
-                                    <iframe width="575" height="455" src="https://www.youtube.com/embed/amrid966XhQ" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
+                    {% else %}
                         <div class="item">
-                            <img class="img-responsive" src="imgs/java8-1280.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="imgs/jbox2d-1280.jpg" alt="">
-                        </div>
-                    </div>
-
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <h3>Description</h3>
-                <p>Small demo developed as three milestones coursework at <a href="http://www.city.ac.uk/">uni</a>. It's inspired by the Super Mario games but it has a slightly 
-                different way to succed the levels: gathering enough roses to give to the princess in order to ulock the next level.
-                <br><br>
-                The game provides a simple but efficient GUI that lets navigate between levels and replay them as well.<br>
-                Elementary AI has been included in the game to raise a little bit the overall level of fun.
-                </p>
-                <h3>Details</h3>
-                <ul>
-                    <li>Java 8 OOP</li>
-                    <li><a href="http://www.jbox2d.org/" >JBox2D Physics Engine</a></li>
-                    <li>UI</li>
-                    <li>HUD</li>
-                </ul>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <!-- Related Projects Row -->
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h3 class="page-header">Other Projects</h3>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="topfreegames.html">
-                    <img class="img-responsive img-hover img-related" src="imgs/topfreegames_website-1280.jpg" alt="">
-                </a>
-            </div>
+                    {% endif %}
             
-            <div class="col-sm-3 col-xs-6">
-                <a href="comingsoon.html">
-                    <img class="img-responsive img-hover img-related" src="imgs/gamer-1280.jpg" alt="">
-                </a>
-            </div>
-            <!--
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
-                </a>
+                    {% if img.isVideo %}        
+                        <div align="center">
+                            <iframe width="{{project.media_width}}" height="{{project.media_height}}" src="{{img.url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>          
+                    {% else %}
+                            <img class="img-responsive" src="{% static img.url %}" alt="{{alt}}">
+                    {% endif %}
+                    </div>
+                {% endfor %}
             </div>
 
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive img-hover img-related" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-        -->
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <i class="fas fa-less-than test"></i>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <i class="fas fa-greater-than test"></i>
+            </a>
         </div>
+    </div>
+
+    <div class="col-md-4">
+        {% block proj_description %}
+
+        {% endblock %}
+    </div>
+
+</div>
+<!-- /.row -->
+
 
 {% endblock %}
