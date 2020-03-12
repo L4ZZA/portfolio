@@ -6,97 +6,90 @@
 {% endblock %}
 
 {% block carousel %}
-<!-- Header Carousel -->
-<header id="main-carousel" class="carousel slide">
-    <!-- Indicators -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         {% for proj in projects %}
-            <li data-target="#main-carousel" data-slide-to="{{forloop.counter0}}" class='{{ forloop.first|yesno:"active," }}'></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.counter0}}" data-interval="3000"
+            class='{{ forloop.first|yesno:"active," }}'></li>
         {% endfor %}
     </ol>
-
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
-
         {% for proj in projects %}
             {% if forloop.first %}
-                <div class="item active">
+        <div class="carousel-item active">
             {% else %}
-                <div class="item">
-            {% endif %}
-                <div class="fill" style='background-image: url("{% static proj.thumbnail %}");'> </div>
+            <div class="carousel-item">
+                {% endif %}
+                <!-- <div class="flex-fill" style='background-image: url("{% static proj.thumbnail %}?auto=yes&bg=777&fg=555&text=First slide");'> </div> -->
+                <img class="w-100" src="{% static proj.thumbnail %}" alt="{{proj.title}}">
             </div>
-            
-            
-            {% if forloop.first %}
-                <span class="carousel-caption" id="title">
-                    <h1>Pietro Lazzarotto</h1><br>
-                    <p>game developper/ web developper</p>
-                </span>
-            {% endif %}
+        {% endfor %}
+            <div class="carousel-caption mb-m-5 mx-auto">
+                <div class="text-uppercase">
+                    <span>software engineer</span><span class="d-none d-md-inline">/</span><span> game developer</span>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+        <div class="col-12">
+            <h1 class="page-header">
+                Hi there!
+            </h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-2"></div> -->
+        <div class="col">
+            <p>
+                I'm currently studing Computer Science with Game Technology at <a href="http://www.city.ac.uk/">City
+                    London
+                    University</a>.
+                <br> Coming from an IT diploma obtained in Italy, I decided to build my future for a career in the
+                videogames industry here in London.
+                <br> Now I'm expanding my knowlegde as much as possible, while looking for a job as a programmer and
+                developing personal projects.
+            </p>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Projects -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="page-header">
+                My projects
+            </h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row mb-5">
+    {% for proj in projects %}
+            <div class="col-md-4 col-sm-4 col-xs-6 m-1">
+                <a href="{% url proj.url %}">
+                    <img class="img-fluid my-img-hover" src="{% static proj.thumbnail %}"
+                        alt="">
+                    <div class="my-caption">
+                        <span>more details</span>
+                    </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
+    <!-- /.row -->
 
-    <!-- Controls -->
-    <a class="left carousel-control" href="#main-carousel" data-slide="prev">
-        <i class="fas fa-less-than test"></i>
-    </a>
-    <a class="right carousel-control" href="#main-carousel" data-slide="next">
-        <i class="fas fa-greater-than test"></i>
-    </a>
-
-</header>
-{% endblock %}
-
-{% block content %}
-
-<!-- Marketing Icons Section -->
-<div class="row">
-    <div class="col-lg-12">
-        <h1 class="page-header">
-            Hi there!
-        </h1>
-    </div>
-    <div class="col-md-8">
-        <p>
-            I'm currently studing Computer Science with Game Technology at <a href="http://www.city.ac.uk/">City London
-                University</a>.
-            <br> Coming from an IT diploma obtained in Italy, I decided to build my future for a career in the
-            videogames industry here in London.
-            <br> Now I'm expanding my knowlegde as much as possible, while looking for a job as a programmer and
-            developing personal projects.
-        </p>
-    </div>
-</div>
-<!-- /.row -->
-
-<!-- Portfolio Projects -->
-<div class="row">
-    <div class="col-lg-12">
-        <h2 class="page-header">My projects</h2>
-    </div>
-    <div class="col-md-4 col-sm-4 col-xs-6">
-        <a href="{% url 'supermario_link' %}">
-            <img class="img-responsive img-hover customer-img" src="{% static  '/images/gamer-1280.jpg' %}"
-                alt="">
-            <div class="desc">
-                <div class="desc-content">
-                    <p >View details »</p>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-md-4 col-sm-4 col-xs-6">
-        <a href="{% url 'doctorhyde_link' %}">
-            <img class="img-responsive img-hover customer-img" src="{% static  '/images/doctorhyde_title.png' %}" alt="">
-            <div class="desc">
-                <div class="desc-content">
-                    <p >View details »</p>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-<!-- /.row -->
-
-{% endblock %}
+    {% endblock %}
