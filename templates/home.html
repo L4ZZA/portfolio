@@ -85,23 +85,23 @@
     <div class="col-lg-12">
         <h2 class="page-header">My projects</h2>
     </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="super-mario.html">
-            <img class="img-responsive img-hover customer-img" src="{% static  '/images/topfreegames-1280.jpg' %}"
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <a href="{% url 'supermario_link' %}">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/gamer-1280.jpg' %}"
                 alt="">
             <div class="desc">
                 <div class="desc-content">
-                    <u>Super Mario</u>
+                    <p >View details »</p>
                 </div>
             </div>
         </a>
     </div>
-    <div class="col-md-2 col-sm-4 col-xs-6">
-        <a href="comingsoon.html">
-            <img class="img-responsive img-hover customer-img" src="{% static  '/images/gamer-1280.jpg' %}" alt="">
+    <div class="col-md-4 col-sm-4 col-xs-6">
+        <a href="{% url 'doctorhyde_link' %}">
+            <img class="img-responsive img-hover customer-img" src="{% static  '/images/doctorhyde_title.png' %}" alt="">
             <div class="desc">
                 <div class="desc-content">
-                    <u>Coming Soon!
+                    <p >View details »</p>
                 </div>
             </div>
         </a>
