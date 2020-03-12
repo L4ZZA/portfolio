@@ -10,6 +10,7 @@ projects = [
         'title':'Super Marioish',
         'type':'University',
         'description':'',
+        'thumbnail':'images/topfreegames-1280.jpg',
         'media_width': 575, 
         'media_height': 455,
         'media':[
@@ -33,7 +34,8 @@ projects = [
     {
         'title':'Doctor Hyde',
         'type':'Personal',
-        'description':'University',
+        'description':'',
+        'thumbnail':'images/doctorhyde_title.png',
         'media_width': 616.656,
         'media_height': 346.719,
         'media':[
@@ -57,6 +59,7 @@ def home(request):
     context = {
         "home_active": "active",
         "title": "Home",
+        "projects": projects,
     }
     return render(request, 'home.html', context)
     

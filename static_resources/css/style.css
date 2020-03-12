@@ -38,7 +38,7 @@ header.carousel .carousel-inner {
 
 header.carousel .carousel-inner #title{
     position: absolute;
-    top:34.5%;
+    top:50%;
 }
 
 header.carousel .carousel-inner #title h1{
@@ -63,6 +63,14 @@ header.carousel .fill {
     height: 100%;
     background-position: center;
     background-size: cover;
+}
+
+.test{
+    margin: 0;
+    position: absolute !important;
+    top: 50% !important;
+    -ms-transform: translateY(-50%) !important;
+    transform: translateY(-50%) !important;
 }
 
 /* 404 Page Styles */
